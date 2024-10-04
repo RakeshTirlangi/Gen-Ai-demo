@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Your's friend (Chatbot)</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* CSS for the loading bar animation */
+    .loading-bar {
+      width: 0;
+      height: 4px;
+      background-color: #3b82f6; /* Tailwind's blue color */
+      animation: loading 1.5s ease-in-out infinite;
+    }
+
+    @keyframes loading {
+      0% {
+        width: 0%;
+      }
+      50% {
+        width: 100%;
+      }
+      100% {
+        width: 0%;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 p-4">
+    <div class="container mx-auto">
+      <div class="flex items-center justify-between">
+        <div class="text-white text-2xl font-bold">
+          Your Chatbot
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mx-auto mt-10">
+    <div class="max-w-xl mx-auto bg-white rounded-lg shadow-md p-8">
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6 text-center">Ask Me Anything! (Not that ...)</h1>
+
+      <div>
+        <label for="question" class="block text-gray-700">What do you want? You see :</label>
+        <input id="question" type="text" class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Type your question here...">
+      </div>
+
+      <button id="submit" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Ask
+      </button>
+
+      <!-- Loading bar (hidden by default) -->
+      <div id="loading" class="mt-4 hidden">
+        <div class="loading-bar"></div>
+        <p class="text-sm text-gray-500 text-center mt-2">Processing your request...</p>
+      </div>
+
+      <!-- Response section -->
+      <div id="response" class="mt-6 p-4 bg-gray-100 rounded-lg text-gray-800">
+        <p class="font-semibold">Here's what you want:</p>
+        <p id="answer">You can see the results here...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 mt-10 p-4 text-center text-white">
+    <p>&copy; 2024 Sky Solutions</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
